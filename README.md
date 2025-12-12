@@ -103,5 +103,5 @@ pr_project/
 | `POST` | `/commit` | **Коммит в GitLab.** Принимает сгенерированный код, URL репозитория и имя файла для коммита. |
 | `GET` | `/health` | Проверка состояния сервиса. |
 
-# Итоговая версия проекта
+# Итоговая версия проекта находится в ветке final
 https://github.com/ShattIgori/ai_devtools_hack_pnv/tree/final
