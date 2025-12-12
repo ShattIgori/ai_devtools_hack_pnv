@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: testops_copilot_backend
+    ports:
+      - "8000:8000"
+    # Переменные окружения для LLM и GitLab
+    environment:
+      # Замените на ваш реальный ключ Cloud.ru Evolution Model
+      CLOUD_RU_API_KEY: ${CLOUD_RU_API_KEY:-"YOUR_LLM_API_KEY_HERE"}
+      # Замените на ваш реальный токен GitLab
+      GITLAB_TOKEN: ${GITLAB_TOKEN:-"YOUR_GITLAB_TOKEN_HERE"}
+    # Монтируем код для удобства разработки (опционально, но полезно)
+    volumes:
+      - .:/app
+    # Зависимость от фронтенда (если бы он был в этом compose)
+    # depends_on:
+    #   - frontend
+
+  # frontend:
+  #   # Здесь будет конфигурация для фронтенда Жени
+  #   # build: ./frontend
+  #   # ports:
+  #   #   - "3000:3000"
+  #   # volumes:
+  #   #   - ./frontend:/app
+  #   # environment:
+  #   #   VITE_API_URL: http://backend:8000
