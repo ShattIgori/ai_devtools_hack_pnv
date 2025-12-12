@@ -1,0 +1,26 @@
+import allure
+import pytest
+
+@allure.feature("Price Calculator")
+@allure.story("{{ story_name }}")
+class Test{{ ClassName }}:
+    """
+    Тест-кейс для UI калькулятора цен.
+    Сгенерирован на основе требования: {{ requirement }}
+    """
+    @allure.title("{{ test_title }}")
+    def test_{{ method_name }}(self):
+        with allure.step("Arrange"):
+            # Инициализация тестового окружения, данных, браузера
+            # {{ setup_code | default("# setup code here") }}
+            pass
+
+        with allure.step("Act"):
+            # Выполнение действия пользователя (например, ввод данных, нажатие кнопки)
+            # {{ action_code | default("# action code here") }}
+            pass
+
+        with allure.step("Assert"):
+            # Проверка ожидаемого результата
+            # {{ validation_code | default("# validation code here") }}
+            assert True

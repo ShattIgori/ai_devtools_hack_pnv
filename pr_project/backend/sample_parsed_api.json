@@ -1,0 +1,164 @@
+[
+  {
+    "path": "/api/v1/users",
+    "full_path": "https://api.example.com/api/v1/users",
+    "method": "GET",
+    "operation_id": "getUsers",
+    "summary": "Get list of users",
+    "description": "",
+    "parameters": [],
+    "has_request_body": false,
+    "tags": [
+      "users"
+    ],
+    "responses": [
+      "200"
+    ]
+  },
+  {
+    "path": "/api/v1/users",
+    "full_path": "https://api.example.com/api/v1/users",
+    "method": "POST",
+    "operation_id": "createUser",
+    "summary": "Create new user",
+    "description": "",
+    "parameters": [],
+    "has_request_body": true,
+    "tags": [
+      "users"
+    ],
+    "responses": [
+      "201"
+    ]
+  },
+  {
+    "path": "/api/v1/vms",
+    "full_path": "https://api.example.com/api/v1/vms",
+    "method": "GET",
+    "operation_id": "getVMs",
+    "summary": "Get list of virtual machines",
+    "description": "Returns a list of virtual machines with optional filtering",
+    "parameters": [
+      {
+        "name": "limit",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Maximum number of items to return"
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Number of items to skip"
+      },
+      {
+        "name": "status",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "Filter by VM status"
+      }
+    ],
+    "has_request_body": false,
+    "tags": [
+      "virtual-machines"
+    ],
+    "responses": [
+      "200"
+    ]
+  },
+  {
+    "path": "/api/v1/vms",
+    "full_path": "https://api.example.com/api/v1/vms",
+    "method": "POST",
+    "operation_id": "createVM",
+    "summary": "Create a new virtual machine",
+    "description": "Creates a new virtual machine with specified parameters",
+    "parameters": [],
+    "has_request_body": true,
+    "tags": [
+      "virtual-machines"
+    ],
+    "responses": [
+      "201",
+      "400"
+    ]
+  },
+  {
+    "path": "/api/v1/vms/{id}",
+    "full_path": "https://api.example.com/api/v1/vms/{id}",
+    "method": "DELETE",
+    "operation_id": "deleteVM",
+    "summary": "Delete VM",
+    "description": "Deletes a virtual machine by ID",
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "type": "string",
+        "description": ""
+      }
+    ],
+    "has_request_body": false,
+    "tags": [
+      "virtual-machines"
+    ],
+    "responses": [
+      "204",
+      "404"
+    ]
+  },
+  {
+    "path": "/api/v1/vms/{id}",
+    "full_path": "https://api.example.com/api/v1/vms/{id}",
+    "method": "GET",
+    "operation_id": "getVMById",
+    "summary": "Get VM by ID",
+    "description": "Returns detailed information about a specific virtual machine",
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "type": "string",
+        "description": "VM unique identifier"
+      }
+    ],
+    "has_request_body": false,
+    "tags": [
+      "virtual-machines"
+    ],
+    "responses": [
+      "200",
+      "404"
+    ]
+  },
+  {
+    "path": "/api/v1/vms/{id}",
+    "full_path": "https://api.example.com/api/v1/vms/{id}",
+    "method": "PUT",
+    "operation_id": "updateVM",
+    "summary": "Update VM",
+    "description": "Fully updates an existing virtual machine",
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "type": "string",
+        "description": ""
+      }
+    ],
+    "has_request_body": true,
+    "tags": [
+      "virtual-machines"
+    ],
+    "responses": [
+      "200",
+      "404"
+    ]
+  }
+]

@@ -1,0 +1,61 @@
+openapi: 3.0.3
+info:
+  title: Пример API
+  version: 1.0.0
+servers:
+  - url: https://api.example.com/v1
+paths:
+  /vms:
+    get:
+      summary: Получить список ВМ
+      operationId: getVMs
+      parameters:
+        - name: status
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 20
+      responses:
+        '200':
+          description: Успешно
+    post:
+      summary: Создать новую ВМ
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Создано
+  /vms/{id}:
+    get:
+      operationId: getVMById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Успешно
+    put:
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Успешно
